@@ -1,11 +1,274 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Portfólio - PEDRO HENRIQUE JOSE DA SILVA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags dynamically loaded via js/main.js -->
+    <title>Portfólio DSM</title>
+    <meta name="description" content="Carregando portfólio...">
+
+    <!-- Favicon (inline SVG, sem request extra) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='66' font-family='Inter,system-ui,sans-serif' font-size='52' font-weight='800' text-anchor='middle' fill='white'%3EP%3C/text%3E%3C/svg%3E">
+
+    <!-- Apply saved theme before CSS loads to prevent flash of wrong theme -->
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (stored === "dark" || (!stored && prefersDark)) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            } catch (_) { /* localStorage may be unavailable */ }
+        })();
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <h1>Bem vindo ao Portfólio de PEDRO HENRIQUE JOSE DA SILVA</h1>
+
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress-bar" id="scroll-progress-bar"></span></div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- --- HEADER --- -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" id="header-logo" aria-label="Voltar ao início">
+                <!-- Injetado dinamicamente -->
+            </a>
+            
+            <nav class="nav" id="navigation" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li id="nav-item-experience"><a href="#experience" class="nav-link">Experiência</a></li>
+                    <li><a href="#academic" class="nav-link">Formação</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-btn" aria-label="Alternar tema escuro/claro">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+                
+                <button class="menu-toggle" id="menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navigation">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- --- HERO SECTION --- -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <span class="hero-welcome">Olá, eu sou</span>
+                        <h1 class="hero-name" id="hero-name"><!-- Injetado dinamicamente --></h1>
+                        <h2 class="hero-role" id="hero-role"><!-- Injetado dinamicamente --></h2>
+                        
+                        <div class="hero-location" id="hero-location-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span id="hero-location"><!-- Injetado dinamicamente --></span>
+                        </div>
+                        
+                        <p class="text-lead hero-description" id="hero-description"><!-- Injetado dinamicamente --></p>
+                        
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                            <a href="#" id="hero-github" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+                            <a href="#" id="hero-linkedin" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-photo-wrapper">
+                        <div class="profile-avatar" id="hero-avatar"><!-- Injetado dinamicamente --></div>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="hero-scroll-indicator" aria-label="Rolar para a próxima seção">
+                <span class="hero-scroll-mouse" aria-hidden="true"></span>
+            </a>
+        </section>
+
+        <!-- --- ABOUT SECTION --- -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title">Sobre mim</h2>
+                <div class="about-grid">
+                    <div class="about-text" id="about-description"><!-- Injetado dinamicamente --></div>
+                    
+                    <div class="about-cards-wrapper">
+                        <div class="interests-container" id="interests-section">
+                            <h3 class="about-subtitle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 2 18 2 18 6 6 6 6 2"/><rect width="14" height="14" x="5" y="6" rx="2"/><path d="M9 16h6"/><path d="M9 12h6"/></svg>
+                                Interesses
+                            </h3>
+                            <div class="pill-list" id="about-interests"><!-- Injetado dinamicamente --></div>
+                        </div>
+                        
+                        <div class="objectives-container" style="margin-top: 24px;" id="objectives-section">
+                            <h3 class="about-subtitle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                Objetivos Profissionais
+                            </h3>
+                            <div class="objective-list" id="about-objectives"><!-- Injetado dinamicamente --></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- SKILLS SECTION --- -->
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="skills-grid" id="skills-grid"><!-- Injetado dinamicamente --></div>
+
+                <div class="learning-block" id="learning-section">
+                    <div class="learning-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="m6.4 7.4-2.8-2.8"/><path d="M2 12h4"/><path d="m6.4 16.6-2.8 2.8"/><path d="M12 22v-4"/><path d="m17.6 16.6 2.8 2.8"/><path d="M22 12h-4"/><path d="m17.6 7.4 2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg>
+                        <h3 class="learning-title">Em aprendizado contínuo</h3>
+                    </div>
+                    <p class="learning-subtitle">Tecnologias que estou estudando atualmente para expandir meu repertório técnico.</p>
+                    <div class="learning-list" id="learning-list"><!-- Injetado dinamicamente --></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- PROJECTS SECTION --- -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="projects-header">
+                    <h2 class="section-title" style="margin-bottom: 0;">Projetos</h2>
+                    <div class="filter-bar" id="filter-bar" role="tablist" aria-label="Filtrar projetos">
+                        <!-- Injetado dinamicamente -->
+                    </div>
+                </div>
+                <div class="projects-grid" id="projects-grid"><!-- Injetado dinamicamente --></div>
+            </div>
+        </section>
+
+        <!-- --- EXPERIENCE SECTION (OPTIONAL) --- -->
+        <section class="section" id="experience">
+            <div class="container">
+                <h2 class="section-title">Experiência</h2>
+                <div class="timeline" id="experience-timeline"><!-- Injetado dinamicamente --></div>
+            </div>
+        </section>
+
+        <!-- --- ACADEMIC FORMATION SECTION --- -->
+        <section class="section" id="academic">
+            <div class="container">
+                <h2 class="section-title">Formação Acadêmica</h2>
+                <div class="education-section">
+                    <div>
+                        <h3 class="about-subtitle" style="margin-bottom: 24px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                            Curso Principal
+                        </h3>
+                        <div class="timeline" id="main-academic-info"><!-- Injetado dinamicamente --></div>
+                    </div>
+                    <div>
+                        <h3 class="about-subtitle" style="margin-bottom: 24px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                            Certificações & Cursos
+                        </h3>
+                        <div class="timeline" id="education-timeline"><!-- Injetado dinamicamente --></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- CONTACT SECTION --- -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contato</h2>
+                <div class="contact-layout">
+                    <div class="contact-text">
+                        <p class="text-lead" style="margin-bottom: 16px;">Vamos conversar sobre novas ideias, colaborações ou oportunidades de tecnologia!</p>
+                        <p class="text-muted">Você pode entrar em contato direto através das minhas redes sociais ou me enviando um e-mail.</p>
+                    </div>
+                    
+                    <div class="contact-links" id="contact-links-grid"><!-- Injetado dinamicamente --></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- --- FOOTER --- -->
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <p class="footer-logo" id="footer-logo"><!-- Injetado dinamicamente --></p>
+                <p class="text-muted" style="margin-top: 4px;">Desenvolvedor de Software Multiplataforma</p>
+            </div>
+            
+            <p class="text-muted" id="footer-copyright"><!-- Injetado dinamicamente --></p>
+            
+            <div class="footer-socials" id="footer-social-links"><!-- Injetado dinamicamente --></div>
+        </div>
+    </footer>
+
+    <!-- --- DETAIL MODAL --- -->
+    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+        <div class="modal-container">
+            <div class="modal-image-wrapper">
+                <img src="" alt="" class="modal-image" id="modal-image">
+                <button class="modal-close-btn" id="modal-close" aria-label="Fechar modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+                </button>
+            </div>
+            
+            <div class="modal-content-body">
+                <div class="modal-meta-row" id="modal-meta">
+                    <!-- Injetado dinamicamente -->
+                </div>
+                
+                <h3 class="modal-title" id="modal-title"><!-- Injetado dinamicamente --></h3>
+                
+                <h4 class="modal-section-title">Descrição do Projeto</h4>
+                <p class="modal-description" id="modal-desc"><!-- Injetado dinamicamente --></p>
+                
+                <h4 class="modal-section-title">Minha Contribuição</h4>
+                <p class="modal-contribution" id="modal-contrib"><!-- Injetado dinamicamente --></p>
+                
+                <h4 class="modal-section-title">Tecnologias Utilizadas</h4>
+                <div class="modal-tags-grid" id="modal-tags"><!-- Injetado dinamicamente --></div>
+                
+                <div class="modal-actions" id="modal-actions-container">
+                    <!-- Injetado dinamicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Structured data (schema.org Person) — written by js/main.js using portfolioData -->
+    <script id="ld-person" type="application/ld+json"></script>
+
+    <!-- Scripts como ES Modules: o `type="module"` já é defer por padrão,
+         e o sistema de imports garante a ordem correta (data.js → módulos → main.js). -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
