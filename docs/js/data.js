@@ -129,7 +129,15 @@ export const portfolioData = {
                 "Aplicação web desenvolvida em equipe para monitorar recursos de serviços digitais e estimar consumo de energia e emissões de CO₂e. Reúne histórico de coletas, comparação entre serviços, rankings e painéis de monitoramento para apoiar análises de sustentabilidade.",
             contribution:
                 "Atuei principalmente no back-end, integrando dados de métricas e intensidade de carbono, implementando a coleta e a persistência no PostgreSQL e criando endpoints de histórico e status do monitoramento. Também contribuí com autenticação, configuração do ambiente com Docker Compose, documentação técnica e ajustes na interface.",
-            technologies: ["TypeScript", "Node.js", "Express", "PostgreSQL", "React", "Zod", "Docker"],
+            technologies: [
+                "TypeScript",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
+                "React",
+                "Zod",
+                "Docker",
+            ],
             semester: "2DSM",
             type: "Acadêmico",
             github: "https://github.com/Team-Zero-DSM/GreenER",
@@ -140,9 +148,16 @@ export const portfolioData = {
             title: "Portal Scrum — ABP 1DSM",
             description:
                 "Plataforma para aprender e se certificar em Scrum. O aluno faz provas por níveis, acompanha sua evolução e, ao concluir todos, recebe um certificado com a nota final. Projeto em grupo, desenvolvido em 3 sprints aplicando Scrum na prática.",
-            contribution: 
+            contribution:
                 "Desenvolvi boa parte do back-end (API, regras de negócio e banco de dados), refatorei para arquitetura em camadas (Controller, Service e Repositories) e atuei como Product Owner, apoiando o time.",
-            technologies: ["JavaScript", "Node.js", "Express", "PostgreSQL", "HTML5", "CSS3"],
+            technologies: [
+                "JavaScript",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
+                "HTML5",
+                "CSS3",
+            ],
             semester: "1DSM",
             type: "Acadêmico",
             github: "https://github.com/TeamStacked/PortalScrum",
@@ -156,7 +171,18 @@ export const portfolioData = {
                 "Projeto pessoal full stack para descobrir e cadastrar jogos. O catálogo oferece busca por nome ou estúdio, filtros por gênero e plataforma, ordenação, paginação e páginas de detalhes, com uma API REST e persistência em banco relacional.",
             contribution:
                 "Desenvolvi a interface com Next.js, React e TypeScript e a API com Node.js e Express. Organizei o back-end em camadas, modelei os dados com Prisma e PostgreSQL e implementei busca, filtros, cadastro e validação. Também configurei o Docker Compose e os testes automatizados do catálogo, formulário e API.",
-            technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "JavaScript", "Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
+            technologies: [
+                "TypeScript",
+                "Next.js",
+                "React",
+                "Tailwind CSS",
+                "JavaScript",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
+                "Prisma",
+                "Docker",
+            ],
             semester: "Projeto pessoal",
             type: "Pessoal",
             github: "https://github.com/phjsilva/masterkey-game",
