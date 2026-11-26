@@ -2,12 +2,12 @@
 
 **Aluno:** Pedro Henrique Jose da Silva  
 **Curso:** Desenvolvimento de Software Multiplataforma  
-**Turma:** 1º semestre de 2026  
+**Turma:** 1º semestre de 2026
 
 ---
 
 **Portfólio Online**  
-🔗 [Acesse o Portfólio](#)
+🔗 [Acesse o Portfólio](https://fatec-jacarei-dsm-portfolio.github.io/ra2581392613038/)
 
 ---
 

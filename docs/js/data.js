@@ -28,7 +28,6 @@ export const portfolioData = {
             "Estudante de Desenvolvimento de Software Multiplataforma na Fatec Jacareí. Apaixonado por solucionar problemas através de código limpo, arquitetura escalável e interfaces elegantes.",
         // Deixe "" para testar o fallback de iniciais ("PH").
         profileImage: "assets/images/profile/profile.png",
-        email: "pedrohjose01@gmail.com",
         github: "https://github.com/phjsilva",
         linkedin: "https://www.linkedin.com/in/pedrohjose/",
     },
@@ -37,7 +36,7 @@ export const portfolioData = {
     about: {
         title: "Sobre mim",
         description:
-            "Atualmente curso o 2º semestre de Desenvolvimento de Software Multiplataforma (DSM) na Fatec Jacareí. Meu foco principal está em projetar e construir aplicações web modernas, seguras e bem estruturadas. Tenho grande interesse na cultura DevOps, boas práticas de código (Clean Code) e metodologias ágeis.",
+            "Minha formação em Desenvolvimento de Software Multiplataforma (DSM) na Fatec Jacareí orienta meu interesse por tecnologia. Meu foco principal está em projetar e construir aplicações web modernas, seguras e bem estruturadas. Tenho grande interesse na cultura DevOps, boas práticas de código (Clean Code) e metodologias ágeis.",
         interests: [
             "Arquitetura de Software",
             "Desenvolvimento Full Stack",
@@ -125,18 +124,44 @@ export const portfolioData = {
     /* --- Projetos exibidos na grade (com filtros automáticos por `type`) --- */
     projects: [
         {
-            title: "ABP1-Portal Scrum",
+            title: "GreenER — ABP 2DSM",
             description:
-                "Plataforma para aprender e se certificar em Scrum.O aluno faz provas por níveis, acompanha sua evolução e, ao concluir todos, recebe um certificado com a nota final. Projeto em grupo, desenvolvido em 3 sprints aplicando Scrum na prática.",
+                "Aplicação web desenvolvida em equipe para monitorar recursos de serviços digitais e estimar consumo de energia e emissões de CO₂e. Reúne histórico de coletas, comparação entre serviços, rankings e painéis de monitoramento para apoiar análises de sustentabilidade.",
+            contribution:
+                "Atuei principalmente no back-end, integrando dados de métricas e intensidade de carbono, implementando a coleta e a persistência no PostgreSQL e criando endpoints de histórico e status do monitoramento. Também contribuí com autenticação, configuração do ambiente com Docker Compose, documentação técnica e ajustes na interface.",
+            technologies: ["TypeScript", "Node.js", "Express", "PostgreSQL", "React", "Zod", "Docker"],
+            semester: "2DSM",
+            type: "Acadêmico",
+            github: "https://github.com/Team-Zero-DSM/GreenER",
+            demo: "",
+            image: "assets/images/projects/greener.jpg",
+        },
+        {
+            title: "Portal Scrum — ABP 1DSM",
+            description:
+                "Plataforma para aprender e se certificar em Scrum. O aluno faz provas por níveis, acompanha sua evolução e, ao concluir todos, recebe um certificado com a nota final. Projeto em grupo, desenvolvido em 3 sprints aplicando Scrum na prática.",
             contribution: 
-                "Desenvolvi boa parte do backen(API, regras de negócio e banco de dados), refatorei para arquitetura em camadas (Controller, Service e Repositories) e atuei como Product Owner, apoiando o time.",
-            technologies: ["HTML5", "CSS3", "JavaScript", "SQL", "PostgreSQL"],
-            semester: "1º Semestre",
+                "Desenvolvi boa parte do back-end (API, regras de negócio e banco de dados), refatorei para arquitetura em camadas (Controller, Service e Repositories) e atuei como Product Owner, apoiando o time.",
+            technologies: ["JavaScript", "Node.js", "Express", "PostgreSQL", "HTML5", "CSS3"],
+            semester: "1DSM",
             type: "Acadêmico",
             github: "https://github.com/TeamStacked/PortalScrum",
             demo: "https://portal-scrum.vercel.app",
             // Deixe "" para usar o fallback visual estilizado do card.
             image: "assets/images/projects/portal-scrum.png",
-        }
+        },
+        {
+            title: "MasterKey — Catálogo de jogos",
+            description:
+                "Projeto pessoal full stack para descobrir e cadastrar jogos. O catálogo oferece busca por nome ou estúdio, filtros por gênero e plataforma, ordenação, paginação e páginas de detalhes, com uma API REST e persistência em banco relacional.",
+            contribution:
+                "Desenvolvi a interface com Next.js, React e TypeScript e a API com Node.js e Express. Organizei o back-end em camadas, modelei os dados com Prisma e PostgreSQL e implementei busca, filtros, cadastro e validação. Também configurei o Docker Compose e os testes automatizados do catálogo, formulário e API.",
+            technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "JavaScript", "Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
+            semester: "Projeto pessoal",
+            type: "Pessoal",
+            github: "https://github.com/phjsilva/masterkey-game",
+            demo: "",
+            image: "assets/images/projects/masterkey.jpg",
+        },
     ],
 };
