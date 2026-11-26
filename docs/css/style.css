@@ -293,7 +293,7 @@ body {
     font-size: 2.75rem;
     font-weight: 500;
     letter-spacing: -0.02em;
-    color: var(--text-secondary);
+    color: var(--accent-text);
     margin-bottom: 24px;
 }
 
@@ -319,6 +319,12 @@ body {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+.hero-actions .btn-primary {
+    padding: 14px 24px;
+    font-weight: 650;
+    box-shadow: 0 4px 16px rgba(var(--accent-rgb), 0.18);
 }
 
 /* Container da foto de perfil */
@@ -710,14 +716,15 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .project-card {
+    min-width: 0;
     background: var(--surface);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     display: flex;
@@ -730,6 +737,11 @@ body {
     transform: translateY(-4px);
     border-color: var(--border-hover);
     box-shadow: var(--shadow-lg);
+}
+
+.project-card:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
 }
 
 .project-image-container {
@@ -745,6 +757,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     transition: var(--transition-slow);
 }
 
@@ -803,14 +816,15 @@ body {
 }
 
 .project-card-body {
-    padding: 28px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .project-card-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.35;
     font-weight: 600;
     margin-bottom: 8px;
     color: var(--text-primary);
@@ -818,12 +832,12 @@ body {
 }
 
 .project-card-description {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 20px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -831,8 +845,9 @@ body {
 .project-card-footer {
     margin-top: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
     border-top: 1px solid var(--border-color);
     padding-top: 16px;
 }
@@ -840,20 +855,35 @@ body {
 .project-card-tags {
     display: flex;
     gap: 6px;
-    overflow: hidden;
-    white-space: nowrap;
-    mask-image: linear-gradient(90deg, #000 70%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, #000 75%, transparent 100%);
-    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .project-card-tag {
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
-    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 5px 9px;
+    border-radius: var(--radius-sm);
+    color: var(--accent-text);
+    background: var(--accent-muted);
+}
+
+.project-card-tag-more {
+    color: var(--text-secondary);
+    background: var(--badge-bg);
+}
+
+.project-card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--accent-text);
 }
 
 .project-card-arrow {
+    display: inline-flex;
     color: var(--accent);
     font-weight: bold;
     font-size: 1.1rem;
@@ -862,6 +892,20 @@ body {
 
 .project-card:hover .project-card-arrow {
     transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-image,
+    .project-card-arrow {
+        transition: none;
+    }
+
+    .project-card:hover,
+    .project-card:hover .project-image,
+    .project-card:hover .project-card-arrow {
+        transform: none;
+    }
 }
 
 /* --- ACADEMIC / TIMELINE --- */

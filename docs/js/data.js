@@ -22,10 +22,10 @@ export const portfolioData = {
     /* --- Dados pessoais exibidos no herói, contato e rodapé --- */
     personal: {
         name: "Pedro Henrique",
-        role: "Desenvolvedor de Software",
+        role: "Desenvolvedor Back-end",
         location: "Jacareí, SP",
         description:
-            "Estudante de Desenvolvimento de Software Multiplataforma na Fatec Jacareí. Apaixonado por solucionar problemas através de código limpo, arquitetura escalável e interfaces elegantes.",
+            "Desenvolvo APIs e aplicações com TypeScript, Node.js e PostgreSQL. Nos projetos da Fatec Jacareí e nos meus projetos pessoais, transformo problemas em soluções com código organizado e trabalho em equipe.",
         // Deixe "" para testar o fallback de iniciais ("PH").
         profileImage: "assets/images/profile/profile.png",
         github: "https://github.com/phjsilva",

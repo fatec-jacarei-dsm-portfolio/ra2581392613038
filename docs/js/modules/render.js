@@ -393,10 +393,10 @@ export function filterAndRenderProjects() {
                     <p class="project-card-description">${escapeHtml(project.description)}</p>
                     <div class="project-card-footer">
                         <div class="project-card-tags">
-                            ${cardTags.map((t) => `<span class="project-card-tag">#${escapeHtml(t)}</span>`).join(" ")}
-                            ${remainingTagsCount > 0 ? `<span class="project-card-tag">+${remainingTagsCount}</span>` : ""}
+                            ${cardTags.map((t) => `<span class="project-card-tag">${escapeHtml(t)}</span>`).join(" ")}
+                            ${remainingTagsCount > 0 ? `<span class="project-card-tag project-card-tag-more" aria-label="Mais ${remainingTagsCount} tecnologias">+${remainingTagsCount}</span>` : ""}
                         </div>
-                        <span class="project-card-arrow" aria-hidden="true">${ICONS.arrowRight}</span>
+                        <span class="project-card-action" aria-hidden="true">Ver projeto <span class="project-card-arrow">${ICONS.arrowRight}</span></span>
                     </div>
                 </div>
             </article>
